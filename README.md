@@ -3,6 +3,7 @@
 This is a simple **RAG (Retrieval-Augmented Generation)** application that uses a **FastAPI backend** and a **React + TypeScript + Tailwind CSS** frontend built with **Vite**.
 
 The AI assistant scrapes content from the BMO Credit Card webpage, stores embeddings in a **FAISS vector store**, and answers questions based on this saved knowledge.
+<img width="1852" height="1150" alt="Screenshot 2025-07-23 at 9 22 37 AM" src="https://github.com/user-attachments/assets/77f5b5d1-7343-451b-8124-0f07970d35d4" />
 
 ---
 

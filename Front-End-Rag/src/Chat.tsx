@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import { signOut, getAuth } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 import BmoLogo from "./assets/bmo-logo.svg";
 
@@ -34,6 +34,7 @@ const ChatPage: React.FC = () => {
 
   const navigate = useNavigate();
   const bottomRef = useRef<HTMLDivElement>(null);
+  const authInstance = getAuth();
 
   // Auto-scroll to bottom on new message
   useEffect(() => {
@@ -82,9 +83,15 @@ const ChatPage: React.FC = () => {
     setQuery("");
 
     try {
+      const currentUser = authInstance.currentUser;
+      if (!currentUser) throw new Error("User not authenticated");
+      const idToken = await currentUser.getIdToken();
       const response = await fetch("http://127.0.0.1:8000/ask", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${idToken}`,
+        },
         body: JSON.stringify({ query }),
       });
 

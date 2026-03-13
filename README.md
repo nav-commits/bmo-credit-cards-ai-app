@@ -4,6 +4,7 @@ This is a simple **RAG (Retrieval-Augmented Generation)** application that uses 
 
 The AI assistant scrapes content from the BMO Credit Card webpage, stores embeddings in a **FAISS vector store**, and answers questions based on this saved knowledge.
 
+<img width="1334" height="1085" alt="Screenshot 2026-03-13 at 12 53 25 PM" src="https://github.com/user-attachments/assets/613a465c-171e-4a92-abd2-9bda82168b62" />
 
 ---
 

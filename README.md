@@ -57,5 +57,5 @@ The AI assistant scrapes content from the BMO Credit Card webpage, stores embedd
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/bmo-rag-assistant.git
+git clone https://github.com/nav-commits/bmo-rag-assistant.git
 cd bmo-rag-app
